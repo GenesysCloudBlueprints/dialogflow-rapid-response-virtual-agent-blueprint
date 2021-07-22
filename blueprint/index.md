@@ -34,7 +34,7 @@ This Genesys Cloud Blueprint explains how to build a rapid response voice and ch
 ## Implementation Steps
 
 - [Create a virtual agent in Dialogflow](#create-a-virtual-agent-in-dialogflow "Opens the Create a virtual agent in Dialogflow section")
-- [Create and manage the service account in Google Cloud](#create-and-manage-the-service-account-in-google-cloud "Opens the Create and manage the service account in Google Cloud)
+- [Create and manage the service account in Google Cloud](#create-and-manage-the-service-account-in-google-cloud "Opens the Create and manage the service account in Google Cloud")
 - [Create an OAuth client in Genesys Cloud for Dialogflow](#create-an-oauth-client-in-genesys-cloud-for-dialogflow "Opens the Create an OAuth client in Genesys Cloud for Dialogflow")
 - [Add the integration for Google Dialogflow](#add-the-integration-for-google-dialogflow "Opens the Add the integration for Google Dialogflow")
 - [Download the COVID Rapid Response flows](#download-the-covid-rapid-response-flows "Opens the Download the COVID Rapid Response flows section")
@@ -57,6 +57,7 @@ This Genesys Cloud Blueprint explains how to build a rapid response voice and ch
 1. Create a service account in Google Cloud platform following the steps from [here](https://cloud.google.com/iam/docs/creating-managing-service-accounts "Opens the Creating and managing service accounts in Google Cloud documentation") and ensure that the service account has the Dialogflow API Client and Dialogflow API Admin roles.
 ![Service account in Google Cloud](images/create-service-account.jpg "Service account in Google Cloud platform")
 2. Create and download the service account key in JSON format as described [here](https://cloud.google.com/iam/docs/creating-managing-service-account-keys "Opens the Creating service account keys in Google Cloud documentation").
+
 :::primary
 **Note**: The JSON file for service account contains the ```client_id```, ```client_email```, ```private_key``` and ```private_key_id```.
 :::
