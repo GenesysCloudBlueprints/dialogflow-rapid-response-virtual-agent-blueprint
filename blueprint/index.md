@@ -106,24 +106,27 @@ You can implement the COVID-19 voice bot as a new flow or add to one of your exi
 **New flow**
 
 1. In Genesys Cloud, navigate to **Admin** > **Architect**.
-2. In the Architect, select **Inbound Call** under Flows and click **Add**.
-3. Enter a name for the flow and click **Create Flow**.
-4. Click the **Save** drop-down list and select **Import**.
-5. Select the ```i3InboundFlow``` file and click **Import**.
-6. Click the **Call Dialogflow Bot** action highlighted in red in the flow.
-7. Under Dialogflow Agent, select the Dialogflow agent that you created in the Google Cloud Platform.
+2. From the Architect home page, click the **Flows** menu and select **Inbound Call**.
+3. Click **Add** and the Create Flow dialog box opens.
+4. Enter a unique name for the flow and click **Create Flow**.
+   The flow’s configuration page opens.
+5. Click the arrow at the end of the **Save** menu and select **Import**.
+   The Import a flow dialog box opens.
+6. Select the ```i3InboundFlow``` file and click **Import**.
+7. Click the **Call Dialogflow Bot** action highlighted in red in the flow.
+8. Under **Dialogflow Agent**, select the Dialogflow agent that you created in the Google Cloud platform.
 
    ![Inbound chat flow](images/inbound-call-flow.png "Inbound chat flow")
 
-8. Click **Publish** to make the flow available for use.
+9.  Click **Publish** to make the flow available for use.
 
 **Update an existing flow**
 
 1. In Genesys Cloud, navigate to **Admin** > **Architect**.
-2. In the Architect, select an existing flow and click **Edit**.
+2. From the Architect home page, click the **Flows** menu, select an existing flow, and then click **Edit**.
 3. Either open the task from where you want to call the bot or if you want access the bot from a menu, drag a **Task** from the **Toolbox**, assign **DTMF or Speech Recognition** from **Settings**, and then open the task.
-4. In the Toolbox, select **Data** and drag the action **Call Dialogflow Bot** to the editor.
-5. Under Dialogflow Agent, select the agent that you created in the Google Cloud Platform.
+4. From the **Toolbox**, select **Data** and drag the action **Call Dialogflow Bot** to the editor.
+5. Under **Dialogflow Agent**, select the agent that you created in the Google Cloud platform.
 6. Click **Publish** to make the updated flow available for use.
 
 ### Enable the COVID-19 chat bot for Genesys Cloud
@@ -133,24 +136,26 @@ Implement the COVID-19 chat bot as a new flow or within one of your existing flo
 **New flow**
 
 1. In Genesys Cloud, navigate to **Admin** > **Architect**.
-2. In the Architect, select **Inbound Chat** under Flows and click **Add**.
-3. Enter a name for the flow and click **Create Flow**.
-4. Click the **Save** drop-down list and select **Import**.
-5. Select the ```i3InboundChatFlow``` file and click **Import**.
-6. Click the **Call Dialogflow Bot** action highlighted in red.
-7. Configure the Dialogflow Agent of the bot action. Select the Dialogflow agent that you created in the Google Cloud Platform.
+2. From the Architect home page, click the **Flows** menu, select **Inbound Chat**.
+3. Click **Add** and the Create Flow dialog opens.
+4. Enter a unique name for the flow and click **Create Flow**.
+   The flow’s configuration page opens.
+5. Click the arrow at the end of the **Save** menu and select **Import**.
+6. Select the ```i3InboundChatFlow``` file and click **Import**.
+7. Click the **Call Dialogflow Bot** action highlighted in red.
+8. Configure the Dialogflow Agent of the bot action. Select the Dialogflow agent that you created in the Google Cloud platform.
 
    ![Inbound chat flow](images/inbound-chat-flow.png "Inbound chat flow")
 
-8. Click **Publish** to make the flow available for use.
+9.  Click **Publish** to make the flow available for use.
 
 **Update an existing flow**
 
 1. In Genesys Cloud, navigate to **Admin** > **Architect**.
-2. In the Architect, select an existing flow and click **Edit**.
-3. Either open the task from where you want to call the bot or if you want access the bot from a menu, drag a **Task** from the **Toolbox**, assign DTMF or Speech Recognition from Settings, and then open the task.
-4. In the Toolbox, select Data and drag the action **Call Dialogflow Bot** to the editor.
-5. Configure the **Dialogflow Agent** of the bot action. Select the agent that you created in the Google Cloud Platform.
+2. From the Architect home page, select an existing flow and click **Edit**.
+3. Either open the task from where you want to call the bot or if you want access the bot from a menu, drag a **Task** from the **Toolbox**, assign **DTMF or Speech Recognition** from **Settings**, and then open the task.
+4. From the **Toolbox**, select **Data** and drag the action **Call Dialogflow Bot** to the editor.
+5. Configure the **Dialogflow Agent** of the bot action. Under **Dialogflow Agent**, select the agent that you created in the Google Cloud platform.
 6. Click **Publish** to make the updated flow available for use.
 
 ### Create and test the widget in Genesys Cloud
@@ -159,11 +164,12 @@ Implement the COVID-19 chat bot as a new flow or within one of your existing flo
 3. Select **Version 1.1** as the Widget Type.
 4. To connect the widget to a chat flow, select the chat flow that you created under **Route to Flow**.
 5. Copy the **Generated Script Tag** created for the widget.
+
 :::primary
 **Note**: To show the chat widget, use the tag in your web site.
 :::
-6. Test the widget using the developer tool at https://developer.genesys.cloud/developer-tools/#/webchat
-   1. Select the widget that you created in the Deployment drop-down list.
+6. Test the widget using the developer tool at https://developer.genesys.cloud/developer-tools/#/webchat.
+   1. Select the widget that you created in the **Deployment** drop-down list.
    2. Populate the **Chat Data** fields and click **Start Chart**.
 
 Learn more about how to create a widget for web chat [here](https://help.mypurecloud.com/articles/create-a-widget-for-web-chat/ "Opens the Create a widget for web chat article").
