@@ -71,7 +71,7 @@ This Genesys Cloud Developer Blueprint explains how to build a rapid response vo
       - employee
 
 ![OAuth client credentials](images/oauth-client.png "OAuth client credentials")
-1. Click **Save** and note the **Client ID** and **Client Secret** fields to use in a subsequent step.
+3. Click **Save** and note the **Client ID** and **Client Secret** fields to use in a subsequent task.
 
 ### Add the integration for Google Dialogflow
 1. In Genesys Cloud, select **Admin** > **Integrations** and click the **+Integrations** icon.
@@ -92,8 +92,8 @@ If Google Dialogflow is not in the list, then go to [AppFoundry](https://appfoun
 ![Google Cloud platform service account configuration](images/google-cloud-sa-key.png "Google Cloud service account configuration")
 
 7. In the Genesys Cloud OAuth Client Credential section, click **Configure** and enter the following details from the OAuth client credentials created for Google Dialogflow:
-  - Client ID
-  - Client Secret
+   - Client ID
+   - Client Secret
    ![Google Dialogflow integration configuration](images/dialogflow-interaction-credentials-configuration.png "Google Dialogflow credentials configuration")
 8. In the **Details** tab, toggle the option from **Inactive** to **Active**.
 9.  Verify that the integration is active and then click **Save**.
@@ -177,9 +177,9 @@ Implement the COVID-19 chat bot as a new flow or add it to one of your existing 
 
 ![Chat with Rapid Response Agent](images/chat-with-rapid-response-agent.png "Chat with Rapid Response Agent")
 
-For more information about how to create a widget for web chat, see [Create a widget for web chat](https://help.mypurecloud.com/?p=195772 "Opens the Create a widget for web chat article").
+For more information about how to create a widget for web chat, see [Create a widget for web chat](https://help.mypurecloud.com/?p=195772 "Opens the Create a widget for web chat article") in the Genesys Cloud Resource Center.
 
 ## Additional resources
-* [COVID-19 Rapid Response Virtual Agent | Genesys Cloud - eLearning](https://gened.genesys.com/learn/course/internal/view/elearning/11782/covid-19-rapid-response-virtual-agent-genesys-cloud-elearning)
-* [DevCast: How to Build a Google Rapid Response Virtual Assistant with Genesys Cloud](https://www.youtube.com/watch?v=hvPVYHzc6_8)
-* [Configure the Google Dialogflow Integration](https://help.mypurecloud.com/?p=205970)
+* [COVID-19 Rapid Response Virtual Agent](https://gened.genesys.com/learn/course/internal/view/elearning/11782/covid-19-rapid-response-virtual-agent-genesys-cloud-elearning) in the Genesys Cloud eLearning. 
+* [DevCast: How to Build a Google Rapid Response Virtual Assistant with Genesys Cloud](https://www.youtube.com/watch?v=hvPVYHzc6_8) in the YouTube channel of Genesys Online Community.
+* [Configure the Google Dialogflow Integration](https://help.mypurecloud.com/?p=205970) in the Genesys Cloud Resource Center.
