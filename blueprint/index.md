@@ -6,10 +6,10 @@ icon: blueprint
 image: images/screenshot-1.png
 category: 4
 summary: |
-  This Genesys Cloud Developer Blueprint explains how to build a rapid response voice and chat bot in Genesys Cloud using Google Dialogflow. The voice and chat bot can conduct screenings and answer frequently asked questions about COVID-19. The blueprint demonstrates the use of the COVID-19 virtual agent template, which enables government agencies and healthcare organizations to provide up-to-date information to the public and helps businesses to provide critical company-specific information related to COVID-19 to their customers.
+  This Genesys Cloud Developer Blueprint explains how to build a rapid response voice and chat bot in Genesys Cloud using Google Dialogflow. The voice and chat bot can conduct screenings and answer frequently asked questions about COVID-19. The blueprint demonstrates the use of the COVID-19 virtual agent template, which enables government agencies and healthcare organizations to provide up-to-date information to the public and helps businesses provide critical company-specific information related to COVID-19 to their customers.
 ---
 
-This Genesys Cloud Developer Blueprint explains how to build a rapid response voice and chat bot in Genesys Cloud using Google Dialogflow. The voice and chat bot can conduct screenings and answer frequently asked questions about COVID-19. The blueprint demonstrates the use of the COVID-19 virtual agent template, which enables government agencies and healthcare organizations to provide up-to-date information to the public and helps businesses to provide critical company-specific information related to COVID-19 to their customers. 
+This Genesys Cloud Developer Blueprint explains how to build a rapid response voice and chat bot in Genesys Cloud using Google Dialogflow. The voice and chat bot can conduct screenings and answer frequently asked questions about COVID-19. The blueprint demonstrates the use of the COVID-19 virtual agent template, which enables government agencies and healthcare organizations to provide up-to-date information to the public and helps businesses provide critical company-specific information related to COVID-19 to their customers. 
 
 * [Solution components](#solution-components "Goes to the Solution components section")
 * [Prerequisites](#prerequisites "Goes to the Prerequisites section")
@@ -18,14 +18,15 @@ This Genesys Cloud Developer Blueprint explains how to build a rapid response vo
 
 ## Solution Components
 
-* **Genesys Cloud** - A suite of Genesys cloud services for enterprise-grade communications, collaboration, and contact center management. You configure Architect flows in Genesys Cloud.
-* **Google Dialogflow** - Dialogflow is a natural language understanding platform that makes it easy to design and integrate a conversational user interface into your mobile app, web application, device, bot, interactive voice response system, and so on. You provide new and engaging ways for users to interact with your product.
+* **Genesys Cloud** - A suite of Genesys cloud services for enterprise-grade communications, collaboration, and contact center management. You configure Architect flows, data actions, and outbound campaigns in Genesys Cloud.
+* **Architect flow** - A flow in Architect, a drag and drop web-based design tool, dictates how Genesys Cloud handles inbound or outbound interactions.
+* **Google Dialogflow** - Dialogflow is a natural language understanding platform that makes it easy to design and integrate a conversational user interface into your mobile app, web application, device, bot, interactive voice response system, and so on. Dialogflow enables you to provide new and engaging ways for users to interact with your product.
 
 ## Prerequisites
 ### Genesys Cloud account
 
 * A Genesys Cloud license. For more information, see [Genesys Cloud pricing](https://www.genesys.com/pricing "Opens the Genesys Cloud pricing page").
-* An Integration permission. For more information, see [Roles and permissions overview](https://help.mypurecloud.com/?p=24360 "Opens the Roles and permissions overview article") in the Genesys Cloud Resource Center.
+* The roles of Master Admin and Employee. For more information, see [Roles and permissions overview](https://help.mypurecloud.com/?p=24360 "Opens the Roles and permissions overview article") in the Genesys Cloud Resource Center.
 * Google Dialogflow integration. To enable Dialogflow for your Genesys Cloud organization, visit [AppFoundry](https://appfoundry.genesys.com/filter/purecloud/listing/43a28e86-6158-4f86-b705-0b7471e24cfe "Opens the AppFoundry page").
 
 ### Google Dialogflow account
@@ -38,24 +39,24 @@ This Genesys Cloud Developer Blueprint explains how to build a rapid response vo
 - [Create an OAuth client in Genesys Cloud for Dialogflow](#create-an-oauth-client-in-genesys-cloud-for-dialogflow "Opens the Create an OAuth client in Genesys Cloud for Dialogflow")
 - [Add the integration for Google Dialogflow](#add-the-integration-for-google-dialogflow "Opens the Add the integration for Google Dialogflow")
 - [Download the COVID Rapid Response flows](#download-the-covid-rapid-response-flows "Opens the Download the COVID Rapid Response flows section")
-- [Enable the COVID-19 voice bot for Genesys Cloud](#enable-the-covid-19-voice-bot-for-genesys-cloud "Opens the Enable the COVId-19 voice bot for Genesys Cloud")
+- [Enable the COVID-19 voice bot for Genesys Cloud](#enable-the-covid-19-voice-bot-for-genesys-cloud "Opens the Enable the COVID-19 voice bot for Genesys Cloud")
 - [Enable the COVID-19 chat bot for Genesys Cloud](#enable-the-covid-19-chat-bot-for-genesys-cloud "Opens the Enable the COVID-19 chat bot for Genesys Cloud")
 - [Create and test the widget in Genesys Cloud](#create-and-test-the-widget-in-genesys-cloud "Opens the Create and test the widget in Genesys Cloud")
   
 ### Create a virtual agent in Dialogflow
    
-1. Create a virtual agent in Dialogflow using the following steps from [here](https://cloud.google.com/dialogflow/es/docs/tutorials/covid19-rapid-response "Opens the Rapidly build and deploy a virtual agent using Dialogflow templates in the Dialogflow documentation"). The example shows how to use the template ```covid-19-agent-template```, which enables you to program chat or voice bots with the latest COVID-19 responses.
+1. Create a virtual agent in Dialogflow. For more information, see [Rapidly build and deploy a virtual agent using Dialogflow templates](https://cloud.google.com/dialogflow/es/docs/tutorials/covid19-rapid-response "Opens the Rapidly build and deploy a virtual agent using Dialogflow templates in the Dialogflow documentation") in the Dialogflow documentation. The example in the linked procedure shows how to use the ```covid-19-agent-template``` file, which enables you to program chat or voice bots with the latest COVID-19 responses.
 
    ![Dialogflow Agent](images/dialogflow-agent.png "Rapid response agent in Dialogflow")
 
 :::primary
-**Note**: Make a note of the Project ID of the agent in Dialogflow.
+**Note**: Make a note of the Google Project ID of the virtual agent in Dialogflow. You require this Project ID when you create a service account in Google Cloud.
 :::
 
 ### Create and manage the service account in Google Cloud
-1. Create a service account in the Google Cloud platform following the steps from [here](https://cloud.google.com/iam/docs/creating-managing-service-accounts "Opens the Creating and managing service accounts in Google Cloud documentation") and ensure that the service account has the Dialogflow API Client and Dialogflow API Admin roles.
+1. Create a service account in the Google Cloud platform. For more information, see [Creating and managing service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts "Opens the Creating and managing service accounts in Google Cloud documentation") in the Google Cloud documentation. Select the Google project created while creating the virtual agent. Ensure that the service account has the Dialogflow API Client and Dialogflow API Admin roles.
 ![Service account in Google Cloud](images/create-service-account.png "Service account in Google Cloud platform")
-2. Create and download the service account key as described [here](https://cloud.google.com/iam/docs/creating-managing-service-account-keys "Opens the Creating service account keys in Google Cloud documentation"). Create the key type in JSON format.
+2. Create and download the service account key. For more information, see [Creating service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys "Opens the Creating service account keys in Google Cloud documentation") in the Google Cloud documentation. Create the key type in JSON format.
 
 :::primary
 **Note**: The JSON file for the service account contains the ```client_id```, ```client_email```, ```private_key```, and ```private_key_id```.
@@ -70,12 +71,12 @@ This Genesys Cloud Developer Blueprint explains how to build a rapid response vo
       - employee
 
 ![OAuth client credentials](images/oauth-client.png "OAuth client credentials")
-3. Click **Save** and copy the **Client ID** and **Client Secret** fields.
+1. Click **Save** and note the **Client ID** and **Client Secret** fields to use in a subsequent step.
 
 ### Add the integration for Google Dialogflow
 1. In Genesys Cloud, select **Admin** > **Integrations** and click the **+Integrations** icon.
 2. Search for Google Dialogflow integration. 
-If Google Dialogflow is not in the list, then go to [AppFoundry](https://appfoundry.genesys.com/filter/genesyscloud/listing/43a28e86-6158-4f86-b705-0b7471e24cfe "Opens the AppFoundry page") and click **Enable** and go back to step 1.
+If Google Dialogflow is not in the list, then go to [AppFoundry](https://appfoundry.genesys.com/filter/genesyscloud/listing/43a28e86-6158-4f86-b705-0b7471e24cfe "Opens the AppFoundry page") and click **Enable**, then go back to Step 1.
 3. Install the Google Dialogflow integration.
 
 ![Install Google Dialogflow](images/install-dialogflow.png "Install the Google Dialogflow integration")
@@ -94,14 +95,14 @@ If Google Dialogflow is not in the list, then go to [AppFoundry](https://appfoun
   - Client ID
   - Client Secret
    ![Google Dialogflow integration configuration](images/dialogflow-interaction-credentials-configuration.png "Google Dialogflow credentials configuration")
-8. In the **Details** tab, toggle the option from Inactive to Active.
-9.  Verify that the integration is active and click **Save**.
+8. In the **Details** tab, toggle the option from **Inactive** to **Active**.
+9.  Verify that the integration is active and then click **Save**.
 
 ### Download the COVID Rapid Response flows
-Download the [COVID Rapid Response](https://github.com/GenesysCloudBlueprints/dialogflow-rapid-response-virtual-agent-blueprint/blob/main/blueprint/attachments/COVID-19_Rapid_Response_Flow.zip?raw=true "Opens the GitHub repository of COVID Rapid Response flow zip") flow from the GitHub repository. Unzip the ZIP file and you can see two flows named ```i3InboudFlow``` and ```i3InboundChatFlow``` which you will use for creating the voice and chat bots.
+Download the [COVID Rapid Response](https://github.com/GenesysCloudBlueprints/dialogflow-rapid-response-virtual-agent-blueprint/blob/main/blueprint/attachments/COVID-19_Rapid_Response_Flow.zip?raw=true "Opens the GitHub repository of COVID Rapid Response flow zip"), which is stored in the GitHub repository for this blueprint. Unzip the ZIP file, which contains two flows ```i3InboudFlow``` and ```i3InboundChatFlow```.  Use these flows to create the voice and chat bots.
 
 ### Enable the COVID-19 voice bot for Genesys Cloud
-You can implement the COVID-19 voice bot as a new flow or add to one of your existing Architect flows. 
+You can implement the COVID-19 voice bot as a new flow or add it to one of your existing Architect flows. 
 
 **New flow**
 
@@ -125,13 +126,13 @@ You can implement the COVID-19 voice bot as a new flow or add to one of your exi
 1. In Genesys Cloud, navigate to **Admin** > **Architect**.
 2. From the Architect home page, click the **Flows** menu, select an existing flow, and then click **Edit**.
 3. Either open the task from where you want to call the bot or if you want access the bot from a menu, drag a **Task** from the **Toolbox**, assign **DTMF or Speech Recognition** from **Settings**, and then open the task.
-4. From the **Toolbox**, select **Data** and drag the action **Call Dialogflow Bot** to the editor.
+4. From the **Toolbox**, select **Data** and drag the **Call Dialogflow Bot** action to the editor.
 5. Under **Dialogflow Agent**, select the agent that you created in the Google Cloud platform.
 6. Click **Publish** to make the updated flow available for use.
 
 ### Enable the COVID-19 chat bot for Genesys Cloud
 
-Implement the COVID-19 chat bot as a new flow or within one of your existing flows.
+Implement the COVID-19 chat bot as a new flow or add it to one of your existing flows.
 
 **New flow**
 
@@ -154,29 +155,31 @@ Implement the COVID-19 chat bot as a new flow or within one of your existing flo
 1. In Genesys Cloud, navigate to **Admin** > **Architect**.
 2. From the Architect home page, select an existing flow and click **Edit**.
 3. Either open the task from where you want to call the bot or if you want access the bot from a menu, drag a **Task** from the **Toolbox**, assign **DTMF or Speech Recognition** from **Settings**, and then open the task.
-4. From the **Toolbox**, select **Data** and drag the action **Call Dialogflow Bot** to the editor.
+4. From the **Toolbox**, select **Data** and drag the **Call Dialogflow Bot** action to the editor.
 5. Configure the **Dialogflow Agent** of the bot action. Under **Dialogflow Agent**, select the agent that you created in the Google Cloud platform.
 6. Click **Publish** to make the updated flow available for use.
 
-### Create and test the widget in Genesys Cloud
+### Create and test the web chat widget in Genesys Cloud
 1. In Genesys Cloud, navigate to **Contact Center** > **Widgets** and click **Create Widget**.
 2. Enter a name for the widget.
 3. Select **Version 1.1** as the Widget Type.
-4. To connect the widget to a chat flow, select the chat flow that you created under **Route to Flow**.
-5. Copy the **Generated Script Tag** created for the widget.
+4. In the **Route to Flow** field, choose the flow that you created for COVID rapid response.
+5. Click **Save**.
+6. Copy the **Generated Script Tag** created for the widget.
 
-:::primary
-**Note**: To show the chat widget, use the tag in your web site.
-:::
-6. Test the widget using the developer tool at https://developer.genesys.cloud/developer-tools/#/webchat.
-   1. Select the widget that you created in the **Deployment** drop-down list.
-   2. Populate the **Chat Data** fields and click **Start Chart**.
-
-Learn more about how to create a widget for web chat [here](https://help.mypurecloud.com/articles/create-a-widget-for-web-chat/ "Opens the Create a widget for web chat article").
+   :::primary
+   **Note**: To show the chat widget in your web site, use this Generated Script tag. For more information about adding the Version 1.1 widget and deployment key to your website, see [Web chat](https://developer.genesys.cloud/api/digital/webchat/ "Opens the Web chat page").
+   :::
+7. From your browser, open the Web Chat developer tool at https://developer.genesys.cloud/developer-tools/#/webchat. For more information, see [Web Chat developer tool quick start](https://developer.genesys.cloud/guides/quickstarts/developer-tools-web-chats "Opens the Web Chat developer tool quick start page").
+8. From the **Deployment** menu in the Web Chat developer tool, select the chat widget you created.
+9. From the **Queue** menu, select the appropriate queue.
+10. Click **Start Chat** to test your chat bot solution.
 
 ![Chat with Rapid Response Agent](images/chat-with-rapid-response-agent.png "Chat with Rapid Response Agent")
+
+For more information about how to create a widget for web chat, see [Create a widget for web chat](https://help.mypurecloud.com/?p=195772 "Opens the Create a widget for web chat article").
 
 ## Additional resources
 * [COVID-19 Rapid Response Virtual Agent | Genesys Cloud - eLearning](https://gened.genesys.com/learn/course/internal/view/elearning/11782/covid-19-rapid-response-virtual-agent-genesys-cloud-elearning)
 * [DevCast: How to Build a Google Rapid Response Virtual Assistant with Genesys Cloud](https://www.youtube.com/watch?v=hvPVYHzc6_8)
-* [Configure the Google Dialogflow Integration](https://help.mypurecloud.com/articles/configure-the-google-dialogflow-platform-service-account-credential/)
+* [Configure the Google Dialogflow Integration](https://help.mypurecloud.com/?p=205970)
