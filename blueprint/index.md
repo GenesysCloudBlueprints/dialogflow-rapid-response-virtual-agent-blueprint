@@ -29,8 +29,8 @@ This Genesys Cloud Developer Blueprint explains how to build a rapid response vo
 * The roles of Master Admin and Employee. For more information, see [Roles and permissions overview](https://help.mypurecloud.com/?p=24360 "Opens the Roles and permissions overview article") in the Genesys Cloud Resource Center.
 * Google Dialogflow integration. To enable Dialogflow for your Genesys Cloud organization, visit [AppFoundry](https://appfoundry.genesys.com/filter/purecloud/listing/43a28e86-6158-4f86-b705-0b7471e24cfe "Opens the AppFoundry page").
 
-### Google Dialogflow account
-* A Dialogflow service account. To set up a new account, see [Dialogflow](https://dialogflow.com/ "Opens the Google Dialogflow page").
+### Google Cloud account
+* A Google Cloud account. To set up a new account, see [Google Cloud](https://cloud.google.com/) "Opens the Google Cloud page").
 
 ## Implementation Steps
 
