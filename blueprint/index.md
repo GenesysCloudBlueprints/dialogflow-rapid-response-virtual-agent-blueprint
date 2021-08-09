@@ -89,14 +89,16 @@ If Google Dialogflow is not in the list, then go to [AppFoundry](https://appfoun
    3. Private Key ID - ```private_key_id```
    4. Private Key - ```private_key```
 
-![Google Cloud platform service account configuration](images/google-cloud-sa-key.png "Google Cloud service account configuration")
+![Google Cloud platform service account configuration](images/dialogflow-interaction-credentials-configuration.png "Google Dialogflow credentials configuration")
 
 7. In the Genesys Cloud OAuth Client Credential section, click **Configure** and enter the following details from the OAuth client credentials created for Google Dialogflow:
    - Client ID
    - Client Secret
-   ![Google Dialogflow integration configuration](images/dialogflow-interaction-credentials-configuration.png "Google Dialogflow credentials configuration")
+
+   Click **OK**.
+
 8. In the **Details** tab, toggle the option from **Inactive** to **Active**.
-9.  Verify that the integration is active and then click **Save**.
+9. Verify that the integration is active and then click **Save**.
 
 ### Download the COVID Rapid Response flows
 Download the [COVID Rapid Response](https://github.com/GenesysCloudBlueprints/dialogflow-rapid-response-virtual-agent-blueprint/blob/main/blueprint/attachments/COVID-19_Rapid_Response_Flow.zip?raw=true "Opens the GitHub repository of COVID Rapid Response flow zip"), which is stored in the GitHub repository for this blueprint. Unzip the ZIP file, which contains two flows ```i3InboudFlow``` and ```i3InboundChatFlow```.  Use these flows to create the voice and chat bots.
