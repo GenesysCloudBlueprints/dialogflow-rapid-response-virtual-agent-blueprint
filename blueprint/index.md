@@ -30,7 +30,7 @@ This Genesys Cloud Developer Blueprint explains how to build a rapid response vo
 * Google Dialogflow integration. To enable Dialogflow for your Genesys Cloud organization, visit [AppFoundry](https://appfoundry.genesys.com/filter/purecloud/listing/43a28e86-6158-4f86-b705-0b7471e24cfe "Opens the AppFoundry page").
 
 ### Google Cloud account
-* A Google Cloud account. To set up a new account, see [Google Cloud](https://cloud.google.com/) "Opens the Google Cloud page").
+* A Google Cloud account. To set up a new account, see [Google Cloud](https://cloud.google.com/ "Opens the Google Cloud page").
 
 ## Implementation Steps
 
