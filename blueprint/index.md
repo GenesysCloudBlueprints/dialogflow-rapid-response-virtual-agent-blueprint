@@ -11,12 +11,13 @@ summary: |
 
 This Genesys Cloud Developer Blueprint explains how to build a rapid response voice and chat bot in Genesys Cloud using Google Dialogflow. The voice and chat bot can conduct screenings and answer frequently asked questions about COVID-19. The blueprint demonstrates the use of the COVID-19 virtual agent template, which enables government agencies and healthcare organizations to provide up-to-date information to the public and helps businesses provide critical company-specific information related to COVID-19 to their customers. 
 
+
+![Rapid Response Virtual Agent](images/flowchart.png "Rapid Response Virtual Agent")
+## Contents
 * [Solution components](#solution-components "Goes to the Solution components section")
 * [Prerequisites](#prerequisites "Goes to the Prerequisites section")
 * [Implementation steps](#implementation-steps "Goes to the Implementation steps section")
 * [Additional resources](#additional-resources "Goes to the Additional resources section")
-
-![Rapid Response Virtual Agent](images/flowchart.png "Rapid Response Virtual Agent")
 
 ## Solution Components
 
